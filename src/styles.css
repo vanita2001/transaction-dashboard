@@ -342,7 +342,8 @@ body.dark .navbar {
 
 /* CONTAINER */
 body.dark .container {
-  background-color: #b5acac;
+  background-color: #545151;
+  color: white;
 }
 
 /* FORM */
@@ -369,7 +370,7 @@ body.dark td {
 /* INPUTS */
 body.dark input,
 body.dark select {
-  background: #2c2c2c;
+  background: #929090;
   color: #ffffff;
   border: 1px solid #444;
 }
