@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext, useEffect } from "react";
+import Navbar from "./components/Navbar";
+import TransactionForm from "./components/TransactionForm";
+import TransactionList from "./components/TransactionList";
+import Insights from "./components/Insights";
+import Filter from "./components/Filter";
+import { AppContext } from "./context/AppContext";
+import "./styles.css";
 
 function App() {
+
+ const { darkMode } = useContext(AppContext);
+
+  // ✅ APPLY DARK CLASS TO BODY
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  }, [darkMode]);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Navbar />
+      <Filter />
+      <TransactionForm />
+      <TransactionList />
+      <Insights />
     </div>
   );
 }
